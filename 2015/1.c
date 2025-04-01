@@ -16,15 +16,19 @@ int main(void) {
     int count = 0;
 
     for (int i = 0; i != length; i++) {
-        if (location[i] == '('){
+        if (count == -1){
+            printf("Basement at position: %d\n", i);
+            break;
+        }
+        else if (location[i] == '('){
             count++;
-        } else if (location[i] == ')') {
+        }else if (location[i] == ')') {
             count--;
         }
-        
     }
     
     printf("Count: %d\n", count);
+
     
     return 0;
 }
